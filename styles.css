@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@550&display=swap');
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#title {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 15s steps(17) infinite;
+}
+
+@keyframes typing {
+
+    0%,
+    100% {
+        width: 0;
+    }
+
+    20%,
+    60% {
+        width: 100%;
+    }
+
+    40% {
+        width: 100%;
+    }
+
+    80% {
+        width: 0;
+    }
+}
+
+body {
+    background: linear-gradient(280deg, #FEFFD2, #FFEEA9, #F3F8FF, #E0FBE2, #BFF6C3, #FFF2E1, #DCF2F1, #C5FFF8);
+    background-size: 800% 800%;
+    animation: gradient 60s ease infinite;
+}
+
+body,
+html {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 95vh;
+    margin: 0;
+    font-family: 'Roboto Slab', serif;
+    padding: 0px;
+}
+
+#hadith,
+#reference {
+    transition: opacity 0.5s ease-in-out;
+}
+
+#container {
+    text-align: center;
+    max-width: 60em;
+}
+
+#title {
+    font-size: 30px;
+    margin-bottom: 40px;
+    color: #222831;
+}
+
+#hadith {
+    margin-bottom: 20px;
+    font-size: 25px;
+}
+
+#reference {
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: gray;
+}
+
+#next-hadith {
+    margin-top: 40px;
+    padding: 11px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    /* background-color: #0984e3; */
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    padding-left: 30px;
+    transition: background-color 2s;
+}
+
+#copy {
+    background-color: #f1f8ff;
+    color: #222831;
+    background-image: url('copy.svg');
+    background-position: 17px center;
+    /* Moved a bit to the left */
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    margin-left: 10px;
+    margin-top: 40px;
+    padding: 10px 20px;
+    padding-left: 45px;
+}
+
+
+#footer {
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+}
+
+#copyright {
+    font-size: 15px;
+    color: gray;
+    white-space: pre-line;
+}
+
+#next-hadith.clicked {
+    transform: scale(0.9);
+    background-color: #74b9ff;
+}
+
+@media screen and (max-width: 768px) {
+    #container {
+        max-width: 23em;
+        text-align: center;
+    }
+
+    #title {
+        color: #222831;
+        font-size: 18px;
+        margin-bottom: 40px;
+    }
+
+    #title {
+        display: inline-block;
+        overflow: hidden;
+        white-space: nowrap;
+        animation: typing 15s steps(17) infinite;
+    }
+
+    @keyframes typing {
+
+        0%,
+        100% {
+            width: 0;
+        }
+
+        20%,
+        60% {
+            width: 100%;
+        }
+
+        40% {
+            width: 100%;
+        }
+
+        80% {
+            width: 0;
+        }
+    }
+
+    #hadith {
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+
+    #reference {
+        color: gray;
+        font-size: 15px;
+        margin-bottom: 10px;
+    }
+
+    #next-hadith {
+        border: none;
+        color: white;
+        cursor: pointer;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 13px;
+        /* Adjusted from 13x to 13px */
+        padding: 10px 20px;
+        /* Adjusted padding size */
+    }
+
+    #copy {
+        padding-left: 15px;
+        /* Adjust padding to fit just the icon */
+        text-indent: -9999px;
+        /* Hides the text off-screen */
+        align-items: center;
+        justify-content: center;
+        background-image: url('copy.svg');
+        background-position: center left 15px;
+        /* Adjusted for clarity */
+        background-repeat: no-repeat;
+        background-size: 15px;
+        /* Adjusted size */
+        border: none;
+        /* Changed to match design */
+        cursor: pointer;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 13px;
+        margin-left: 10px;
+        padding: 10px 23px;
+        /* Adjusted padding size */
+    }
+
+    #copy::after {
+        content: '';
+        /* Clears the text */
+        background-image: url('copy.png');
+    }
+
+    #footer {
+        bottom: 20px;
+        padding: 10px 0;
+        position: fixed;
+        text-align: center;
+    }
+
+    #copyright {
+        color: gray;
+        font-size: 10px;
+        white-space: pre-line;
+    }
+}

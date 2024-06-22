@@ -1,7 +1,7 @@
 let hadiths = [];
 
 // Load hadiths from JSON file
-fetch('hadiths.json')
+fetch('https://660xiqnvc8.execute-api.us-west-2.amazonaws.com/production/hadith')
     .then(response => response.json())
     .then(data => {
         hadiths = data;

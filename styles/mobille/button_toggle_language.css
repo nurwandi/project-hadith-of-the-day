@@ -1,0 +1,84 @@
+@media screen and (max-width: 768px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        transition: 0.5s;
+    }
+
+    input {
+        display: none;
+    }
+
+    .display {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50px;
+        /* Adjust height as needed */
+        width: 100%;
+        /* Make it span the full width of the footer */
+    }
+
+    /* label is for the whole button */
+    label {
+        width: 45px;
+        height: 30px;
+        border-radius: 999px;
+        background: #3f3f3f;
+        box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.05) inset;
+        cursor: pointer;
+        position: relative;
+        margin-right: 1.5em;
+    }
+
+    /* circle is for the clicking button */
+    .circle {
+        width: 20px;
+        height: 20px;
+        border-radius: 99px;
+        background: white;
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.05),
+            -10px -10px 30px rgba(0, 0, 0, 0.05) inset;
+        position: absolute;
+        top: 50%;
+        left: 10%;
+        transform: translate(0, -50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        transition: left 0.5s ease, transform 0.5s ease;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /* Ensure the image covers the entire circle */
+        border-radius: 99px;
+        /* Ensure the image is also rounded */
+        position: absolute;
+    }
+
+    .english {
+        opacity: 1;
+    }
+
+    .indonesian {
+        opacity: 0;
+    }
+
+    input[type=checkbox]:checked+.display label .circle {
+        left: 90%;
+        transform: translate(-100%, -50%);
+    }
+
+    input[type=checkbox]:checked+.display label .circle .english {
+        opacity: 0;
+    }
+
+    input[type=checkbox]:checked+.display label .circle .indonesian {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#title {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 15s steps(17) infinite;
+}
+
+@keyframes typing {
+
+    0%,
+    100% {
+        width: 0;
+    }
+
+    20%,
+    60% {
+        width: 100%;
+    }
+
+    40% {
+        width: 100%;
+    }
+
+    80% {
+        width: 0;
+    }
+}
+
+body {
+    /* background: linear-gradient(280deg, #FEFFD2, #FFEEA9, #F3F8FF, #E0FBE2, #BFF6C3, #FFF2E1, #DCF2F1, #C5FFF8); */
+    background: #00140E;
+    background-size: 800% 800%;
+    animation: gradient 60s ease infinite;
+}
+
+body,
+html {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 95vh;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    padding: 0px;
+}
+
+#hadith,
+#reference {
+    transition: opacity 0.5s ease-in-out;
+}
+
+#container {
+    text-align: center;
+    max-width: 60em;
+}
+
+#title {
+    font-size: 30px;
+    margin-bottom: 40px;
+    color: white;
+}
+
+#hadith {
+    margin-bottom: 20px;
+    font-size: 25px;
+    color: #73E7C4;
+    line-height: 150%;
+    text-align: left;
+}
+
+#reference {
+    margin-top: 60px;
+    font-size: 20px;
+    color: white;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+#next-hadith {
+    margin-top: 40px;
+    padding: 20px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    color: #00140E;
+    padding-left: 30px;
+    transition: background-color 2s;
+    border-radius: 10px;
+    background-color: #73E7C4;
+    background-image: url('/icons/next_icon.svg');
+    background-position: 17px center;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+}
+
+#copy {
+    background-color: #f1f8ff;
+    color: #222831;
+    background-image: url('/icons/copy_icon.svg');
+    background-position: 17px center;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    margin-left: 10px;
+    margin-top: 40px;
+    padding: 20px 5px;
+    padding-left: 45px;
+    border-radius: 10px;
+}
+
+#footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Menengahkan secara vertikal */
+    padding: 10px 20px;
+    background: transparent;
+}
+
+
+/* Adjust the style for the toggle container */
+.toggle-container {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    z-index: 10;
+    /* Sesuaikan dengan kebutuhan */
+}
+
+#copyright {
+    font-size: 15px;
+    color: gray;
+    white-space: pre-line;
+    text-align: center;
+    /* Tengahkan teks horizontal */
+    flex: 1;
+    /* Menyebabkan elemen untuk memenuhi sisa ruang */
+}
+
+
+#next-hadith.clicked {
+    transform: scale(0.9);
+    background-color: #74b9ff;
+}

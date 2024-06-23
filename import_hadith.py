@@ -1,17 +1,16 @@
 import boto3
 import os
 
-# Inisialisasi klien DynamoDB
+# connect to dynamodb
 dynamodb = boto3.resource('dynamodb')
 
-# Nama tabel, bisa diambil dari environment variable atau di-set langsung
+# get table name from dynamodb
 TABLE_NAME = os.environ.get('TABLE_NAME', 'hadiths')
 
 # Referensi ke tabel
 table = dynamodb.Table(TABLE_NAME)
 
 def add_hadith_to_dynamodb(reference, hadith_content, translation):
-    # Data hadith yang akan ditambahkan
     hadith_item = {
         'reference': reference,
         'hadith': f'The Messenger of Allah (peace and blessings be upon him) said, "{hadith_content}"',
@@ -21,7 +20,7 @@ def add_hadith_to_dynamodb(reference, hadith_content, translation):
     if 'reference' not in hadith_item or 'hadith' not in hadith_item or 'translation' not in hadith_item:
         raise ValueError('It must have "reference", "hadith", and "translation" attributes!')
 
-    # Menyimpan item ke DynamoDB
+    # set item to dynamodb
     try:
         table.put_item(Item=hadith_item)
         print('Item saved successfully: ', hadith_item)

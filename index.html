@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hadith of the Day</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/desktop/styles.css">
+    <link rel="stylesheet" href="styles/desktop/button_toggle_language.css">
+    <link rel="stylesheet" href="styles/mobille/phone_display.css">
+    <link rel="stylesheet" href="styles/mobille/button_toggle_language.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
 </head>
 
@@ -14,16 +17,25 @@
         <h1 id="title">HADITH OF THE DAY</h1>
         <div id="hadith">Click the button below to display hadiths.</div>
         <div id="reference"></div>
-        <button id="next-hadith">NEXT</button>
-        <button id="copy">COPY</button>
+        <button id="next-hadith"></button>
+        <button id="copy"></button>
     </div>
     <div id="footer">
-        <p id="copyright">A TINY PROJECT SERVED
-            TO HELP EVERYONE UNDERSTAND ISLAM
-        </p>
+        <p id="copyright">A TINY PROJECT SERVED TO HELP EVERYONE UNDERSTAND ISLAM</p>
+        <div class="toggle-container">
+            <input type="checkbox" id="toggle">
+            <div class="display">
+                <label for="toggle">
+                    <div class="circle">
+                        <img class="english" src="icons/uk_flag.svg" alt="English">
+                        <img class="indonesian" src="icons/indonesia_flag.svg" alt="Indonesian">
+                    </div>
+                </label>
+            </div>
+        </div>
     </div>
-
-    <script src="script.js"></script>
+    <script src="scripts/script.js"></script>
+    <script src="scripts/button_toggle_language.js"></script>
 </body>
 
 </html>

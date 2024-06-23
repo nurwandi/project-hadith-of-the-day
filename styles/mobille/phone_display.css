@@ -1,0 +1,73 @@
+@media screen and (max-width: 768px) {
+    #container {
+        max-width: 23em;
+        text-align: center;
+    }
+
+    #title {
+        color: white;
+        font-size: 18px;
+        margin-bottom: 40px;
+        text-align: left;
+    }
+
+    #hadith {
+        font-size: 15px;
+        margin-bottom: 20px;
+        line-height: 150%;
+    }
+
+    #reference {
+        margin-top: 30px;
+        font-size: 13px;
+        color: white;
+        text-align: left;
+        text-transform: uppercase;
+    }
+
+    #next-hadith {
+        border: none;
+        color: white;
+        cursor: pointer;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 13px;
+        padding: 10px 20px;
+        border-radius: 10px;
+    }
+
+    #copy {
+        padding-left: 15px;
+        text-indent: -9999px;
+        align-items: center;
+        justify-content: center;
+        background-image: url('/icons/copy_icon.svg');
+        background-position: center left 15px;
+        background-repeat: no-repeat;
+        background-size: 15px;
+        border: none;
+        cursor: pointer;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 13px;
+        margin-left: 10px;
+        padding: 10px 23px;
+        border-radius: 10px;
+    }
+
+    #copy::after {
+        content: '';
+        background-image: url('/icons/copy_icon.svg');
+    }
+
+    #footer {
+        bottom: 20px;
+        padding: 10px 0;
+        position: fixed;
+        text-align: center;
+    }
+
+    #copyright {
+        color: gray;
+        font-size: 10px;
+        white-space: pre-line;
+    }
+}

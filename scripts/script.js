@@ -1,19 +1,18 @@
 let hadiths = [];
-let currentHadith = null; // Menyimpan hadith saat ini untuk referensi
-let isTranslated = false; // Menyimpan status terjemahan
+let currentHadith = null; // hadith reference
+let isTranslated = false; // hadith translation
 
 document.addEventListener('DOMContentLoaded', function () {
-    // Memastikan elemen ada sebelum menambahkan event listener
     const nextHadithButton = document.getElementById('next-hadith');
     const copyButton = document.getElementById('copy');
     const hadithElement = document.getElementById('hadith');
 
-    // Memuat hadiths dari file JSON
+    // hadith from json
     fetch('https://660xiqnvc8.execute-api.us-west-2.amazonaws.com/production/hadith')
         .then(response => response.json())
         .then(data => {
             hadiths = data;
-            showRandomHadith(); // Tampilkan hadith pertama setelah data dimuat
+            showRandomHadith();
         })
         .catch(error => {
             console.error('Error loading hadiths:', error);
@@ -36,8 +35,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
         });
     }
-
-    // Hapus interval dan referensi terkait updateButtonColor()
 });
 
 function showRandomHadith() {
@@ -52,15 +49,13 @@ function showRandomHadith() {
         if (hadiths.length > 0) {
             const randomIndex = Math.floor(Math.random() * hadiths.length);
             currentHadith = hadiths[randomIndex];
-            // Menampilkan hadith berdasarkan status terjemahan
             hadithElement.innerText = isTranslated ? currentHadith.translation : currentHadith.hadith;
             referenceElement.innerText = currentHadith.reference;
         } else {
             hadithElement.innerText = 'Load the hadith...';
             referenceElement.innerText = '';
         }
-        // Fade in the new hadith and reference
         hadithElement.style.opacity = 1;
         referenceElement.style.opacity = 1;
-    }, 500); // Adjust time as needed
+    }, 500);
 }

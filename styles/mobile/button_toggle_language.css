@@ -22,14 +22,16 @@
 
     /* label is for the whole button */
     label {
-        width: 45px;
+        width: 50px;
         height: 30px;
         border-radius: 999px;
         background: #3f3f3f;
         box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.05) inset;
         cursor: pointer;
         position: relative;
-        margin-right: 1.5em;
+        margin-right: 1em;
+        margin-bottom: 80em;
+        outline: 4px solid #73E7C4;
     }
 
     /* circle is for the clicking button */

@@ -1,26 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-@keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-#title {
-    display: inline-block;
-    overflow: hidden;
-    white-space: nowrap;
-    animation: typing 15s steps(17) infinite;
-}
-
 @keyframes typing {
 
     0%,
@@ -43,37 +22,31 @@
 }
 
 body {
-    /* background: linear-gradient(280deg, #FEFFD2, #FFEEA9, #F3F8FF, #E0FBE2, #BFF6C3, #FFF2E1, #DCF2F1, #C5FFF8); */
     background: #00140E;
     background-size: 800% 800%;
     animation: gradient 60s ease infinite;
-}
-
-body,
-html {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 95vh;
+    min-height: 100vh;
     margin: 0;
     font-family: 'Inter', sans-serif;
     padding: 0px;
+    display: flex;
+    flex-direction: column;
+    background-image: url('/images/hadith_of_the_day.svg');
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: contain
 }
 
-#hadith,
-#reference {
-    transition: opacity 0.5s ease-in-out;
+html {
+    margin: 0;
+    padding: 0;
 }
 
 #container {
-    text-align: center;
-    max-width: 60em;
-}
-
-#title {
-    font-size: 30px;
-    margin-bottom: 40px;
-    color: white;
+    text-align: left;
+    max-width: 40em;
+    margin: auto;
+    padding: 3em;
 }
 
 #hadith {
@@ -128,20 +101,18 @@ html {
 }
 
 #footer {
-    position: fixed;
+    position: relative;
     bottom: 0;
     left: 0;
     right: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* Menengahkan secara vertikal */
     padding: 10px 20px;
     background: transparent;
+    flex-shrink: 0;
 }
 
-
-/* Adjust the style for the toggle container */
 .toggle-container {
     position: absolute;
     bottom: 20px;
@@ -149,7 +120,6 @@ html {
     display: flex;
     align-items: center;
     z-index: 10;
-    /* Sesuaikan dengan kebutuhan */
 }
 
 #copyright {
@@ -157,11 +127,9 @@ html {
     color: gray;
     white-space: pre-line;
     text-align: center;
-    /* Tengahkan teks horizontal */
     flex: 1;
-    /* Menyebabkan elemen untuk memenuhi sisa ruang */
+    margin-bottom: 1em;
 }
-
 
 #next-hadith.clicked {
     transform: scale(0.9);

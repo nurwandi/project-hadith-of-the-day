@@ -29,7 +29,7 @@ label {
     cursor: pointer;
     position: relative;
     margin-right: 1em;
-    outline: 3.5px solid #73E7C4;
+    outline: 3px solid #73E7C4;
 }
 
 /* circle is for the clicking button */

@@ -23,7 +23,8 @@ This website serves as a **Hadith generator**, where it fetches random Hadiths f
 - The Hadiths are fetched dynamically from the backend using an API built on AWS.
 - The backend is designed for scalability and reliability using AWS services.
 - **SSL/HTTPS** support for secure browsing, managed through **AWS Certificate Manager**.
-- Domain management, including file caching and routing through **Amazon Route 53**.
+- **Amazon CloudFront** CDN integration for optimized content delivery worldwide.
+- **Route 53** DNS management to route the domain and target the CloudFront distribution.
 
 ## Architecture
 
@@ -32,7 +33,8 @@ The architecture of the website is as follows:
 - **Frontend (S3):** The website files (HTML, CSS, JavaScript) are hosted on Amazon S3.
 - **Backend (Lambda + API Gateway):** The API that fetches a random Hadith is powered by AWS Lambda and exposed through API Gateway.
 - **Database (DynamoDB):** Hadiths are stored in Amazon DynamoDB, providing a fast and scalable way to retrieve the data.
-- **DNS and Caching (Route 53):** **Amazon Route 53** handles DNS for the website, including domain management, file caching, and routing for better performance.
+- **CDN (CloudFront):** Content is distributed globally via Amazon CloudFront for faster load times and improved user experience.
+- **DNS and Routing (Route 53):** **Amazon Route 53** handles DNS for the website, routing traffic to the CloudFront distribution.
 - **SSL/HTTPS (Certificate Manager):** **AWS Certificate Manager** is used to secure the website with an SSL certificate, ensuring secure HTTPS connections.
 
 ## How It Works
@@ -41,5 +43,6 @@ The architecture of the website is as follows:
 2. The API Gateway triggers the AWS Lambda function, which fetches a random Hadith from the DynamoDB.
 3. The Lambda function sends the data back to the API Gateway, which forwards it to the frontend.
 4. The frontend displays the Hadith on the page for the user.
-5. **Route 53** is used to route the domain and manage DNS settings, while also implementing file caching to improve performance.
-6. The **SSL certificate** from **AWS Certificate Manager** ensures that the connection between the user and the website is secure, using HTTPS.
+5. **Amazon CloudFront** acts as a CDN, caching content and delivering it quickly to users globally, improving load times and performance.
+6. **Route 53** is used to route the domain and manage DNS settings, targeting the CloudFront distribution for optimized performance.
+7. The **SSL certificate** from **AWS Certificate Manager** ensures that the connection between the user and the website is secure, using HTTPS.
